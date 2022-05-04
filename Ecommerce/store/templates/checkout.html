@@ -1,0 +1,30 @@
+{% extends "layoutscartdetail.html" %}
+{% load humanize%}
+{% load static %}
+{% block content %}
+<h1>เกือบเสร็จแล้ว {{user}}</h1>
+
+<h4 class="text-right">ยอดชำระเงิน {{total|intcomma}} บาท</h4>
+
+<style>
+    .sun{
+        text-align: center;
+    }
+    </style>
+    
+    <div class="sun">
+        <h1> Jim&friend.CO</h1>
+        <a href="https://www.img.in.th/image/8DYUJ7"><img src="https://www.img.in.th/images/abdc9dd6ead32190333fedf5b829e0cc.md.png" alt="abdc9dd6ead32190333fedf5b829e0cc.png" border="0" /></a>
+        <div class="container-fluid pt-5"></div>
+            {% if total_price != 0 %}
+            <img src="{% url 'qr' mobile=mobile amount=total_price %}"height='400'>
+            {% endif %}
+            <h1>promtpay:097-343-7869</h1>
+            <h1>นายธีรวิสิทธ์ จินนารัตน์</h1>
+            <h1> </h1>
+    </div>
+
+
+
+
+{% endblock %}
